@@ -1,0 +1,41 @@
+<div class="message-bubble message-bubble--{type}">
+    <slot></slot>
+</div>
+
+<style>
+    :host {
+        display: flex;
+        margin-bottom: 0.85rem;
+    }
+
+    .message-bubble {
+        max-width: 78%;
+        padding: 0.4rem 0.75rem;
+        border-radius: 16px;
+        font-size: 0.95rem;
+        line-height: 1.45;
+        white-space: pre-wrap;
+        word-break: break-word;
+    }
+
+    /* User messages: accent bubble, aligned to the right */
+    .message-bubble--user {
+        margin-left: auto;
+        color: #fff;
+        background: linear-gradient(135deg, #ff6a1a 0%, #ff8438 100%);
+        border-bottom-right-radius: 4px;
+    }
+
+    /* Assistant messages: neutral surface, aligned to the left */
+    .message-bubble--assistant {
+        margin-right: auto;
+        color: #e8e8ea;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        border-bottom-left-radius: 4px;
+    }
+</style>
+
+<script>
+    const type = "user"; //  "user" or "assistant"
+</script>

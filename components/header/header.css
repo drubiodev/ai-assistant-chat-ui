@@ -1,0 +1,97 @@
+.header-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.85rem 1.25rem;
+    background: rgba(20, 25, 38, 0.72);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    color: #e8e8ea;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* ---------- Brand ---------- */
+.header-topbar .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: #f4f4f5;
+}
+
+/* Brick-stack logo (bricks-c component) */
+.header-topbar .brand bricks-c {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* ---------- Actions ---------- */
+.header-topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.header-topbar .icon-btn {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: none;
+    border-radius: 9px;
+    background: transparent;
+    color: #9a9aa2;
+    cursor: pointer;
+    transition: background-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.header-topbar .icon-btn:hover {
+    background: rgba(255, 255, 255, 0.07);
+    color: #f4f4f5;
+}
+
+.header-topbar .icon-btn:active {
+    transform: scale(0.94);
+}
+
+.header-topbar .icon-btn:focus-visible {
+    outline: 2px solid #ff6a1a;
+    outline-offset: 2px;
+}
+
+.header-topbar .icon-btn .icon {
+    width: 19px;
+    height: 19px;
+}
+
+/* ---------- Avatar ---------- */
+.header-topbar .avatar {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    margin-left: 0.4rem;
+    border-radius: 50%;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #d4d4d8;
+    background: #202024;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    cursor: pointer;
+    user-select: none;
+    transition: border-color 0.18s ease, transform 0.18s ease;
+}
+
+.header-topbar .avatar:hover {
+    transform: translateY(-1px);
+    border-color: rgba(255, 106, 26, 0.6);
+}

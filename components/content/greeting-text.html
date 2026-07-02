@@ -1,0 +1,70 @@
+<div class="greeting">
+    <h1>Nice to see you, {name}.<br />What's new?</h1>
+</div>
+
+<div class="suggestions">
+    <for each="suggestion in suggestionItems">
+        <button class="suggestion-btn">
+            {suggestion}
+        </button>
+    </for>
+</div>
+
+<style>
+    .greeting {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    .greeting h1 {
+        margin: 1rem 0;
+        font-size: clamp(1.9rem, 5vw, 2.6rem);
+        font-weight: 700;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        background: linear-gradient(120deg, #f4f4f5 0%, #b7bdc9 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .suggestions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.65rem;
+    }
+
+    .suggestion-btn {
+        appearance: none;
+        display: inline-flex;
+        align-items: center;
+        padding: 0.7rem 1.1rem;
+        font-family: inherit;
+        font-size: 0.92rem;
+        font-weight: 500;
+        color: #d4d4d8;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        border-radius: 14px;
+        cursor: pointer;
+        text-align: left;
+        transition: background-color 0.18s ease, border-color 0.18s ease,
+            color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .suggestion-btn:hover {
+        color: #f4f4f5;
+        background: rgba(255, 106, 26, 0.1);
+        border-color: rgba(255, 106, 26, 0.5);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 18px rgba(255, 106, 26, 0.14);
+    }
+
+    .suggestion-btn:active {
+        transform: translateY(0);
+    }
+
+    .suggestion-btn:focus-visible {
+        outline: 2px solid #ff6a1a;
+        outline-offset: 2px;
+    }
+</style>

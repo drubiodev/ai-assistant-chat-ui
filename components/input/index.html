@@ -2,15 +2,17 @@
 
 <div class="input-area">
     <div class="input-container">
+        <div $ref="img-preview"></div>
         <input type="text" $bind="messageText" $on:keyup.enter="sendMessage()" class="input-field"
             placeholder="Message Co-Driver" />
         <div class="input-actions">
             <div class="input-actions-left">
-                <button class="action-btn" title="Add attachment">
+                <button class="action-btn" title="Add attachment" onclick="addAttachment()">
                     <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <line x1="12" y1="5" x2="12" y2="19" />
                         <line x1="5" y1="12" x2="19" y2="12" />
                     </svg>
+                    <input type="file" $ref="fileInput" hidden multiple onchange="onFileSelected(event)" />
                 </button>
                 <button class="smart-btn">
                     Smart
@@ -32,11 +34,4 @@
     </div>
 </div>
 
-<script>
-    let messageText = "";
-
-    const sendMessage = () => {
-        $emit("send-message", messageText)
-        messageText = ""; // Clear the input field after sending
-    };
-</script>
+<script src="./input.js"></script>

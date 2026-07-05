@@ -5,7 +5,7 @@
 </if>
 
 <for each="message in messages">
-    <message-bubble type="{message.type}">{message.text}</message-bubble>
+    <message-bubble type="{message.type}" files="{message.files}">{message.text}</message-bubble>
 </for>
 
 <script>
@@ -26,7 +26,7 @@
 
     $listen("send-message", (data) => {
         console.log("Received message:", data);
-        messages.push({ type: "user", text: data });
+        messages.push({ type: "user", text: data.text, files: data.files });
 
         setTimeout(() => {
             messages.push({

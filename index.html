@@ -5,15 +5,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Ladrillos JS</title>
-    <script type="module">
-        import { registerComponents } from "https://cdn.jsdelivr.net/npm/ladrillosjs@2.0.0-beta.10/dist/index.js";
-
-        registerComponents([
-            { name: "header-c", path: "./components/header" },
-            { name: "chat-c", path: "./components/content" },
-            { name: "input-c", path: "./components/input" },
-        ]);
-    </script>
     <style>
         *,
         *::before,
@@ -55,13 +46,34 @@
             min-height: 0;
             overflow-y: auto;
         }
+
+        /* Loading state */
+        body.loading {
+            opacity: 0;
+        }
+
+        body {
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
     </style>
 </head>
 
-<body>
+<body class="loading">
     <header-c title="AI Assistant"></header-c>
     <chat-c></chat-c>
     <input-c></input-c>
 </body>
+
+<script type="module">
+    import { registerComponents } from "https://cdn.jsdelivr.net/npm/ladrillosjs@2.0.0-rc.7/dist/index.js";
+
+    registerComponents([
+        { name: "header-c", path: "./components/header" },
+        { name: "chat-c", path: "./components/content" },
+        { name: "input-c", path: "./components/input" },
+    ]);
+    document.body.classList.remove("loading");
+</script>
 
 </html>

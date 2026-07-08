@@ -15,7 +15,9 @@
     ]);
 </script>
 
-<script>
+<script type="module">
+    import { EVENTS } from "../../common/events.js";
+
     const suggestions = [
         "What is the main purpose of this document?",
         "Create a summary of this page",
@@ -24,7 +26,7 @@
 
     const messages = [];
 
-    $listen("send-message", (data) => {
+    $listen(EVENTS.SEND_MESSAGE, (data) => {
         console.log("Received message:", data);
         messages.push({ type: "user", text: data.text, files: data.files });
 

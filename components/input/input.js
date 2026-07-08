@@ -1,9 +1,11 @@
+import { EVENTS } from "../../common/events.js";
+
 const messageText = "";
 const files = [];
 
 const sendMessage = () =>
 {
-    $emit("send-message", { text: messageText, files: files });
+    $emit(EVENTS.SEND_MESSAGE, { text: messageText, files: files });
 
     // Clear the preview while `$refs['img-preview']` still points at the live
     // node. Mutating reactive state (messageText) below triggers a re-render,

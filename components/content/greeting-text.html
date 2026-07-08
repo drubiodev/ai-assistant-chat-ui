@@ -4,7 +4,7 @@
 
 <div class="suggestions">
     <for each="suggestion in suggestionItems">
-        <button class="suggestion-btn">
+        <button class="suggestion-btn" onclick="sendMessage(suggestion)">
             {suggestion}
         </button>
     </for>
@@ -68,3 +68,11 @@
         outline-offset: 2px;
     }
 </style>
+
+<script type="module">
+    import { EVENTS } from "../../common/events.js";
+
+    const sendMessage = (message) => {
+        $emit(EVENTS.SEND_MESSAGE, { text: message });
+    };
+</script>
